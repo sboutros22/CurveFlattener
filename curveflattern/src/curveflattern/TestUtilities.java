@@ -15,6 +15,8 @@ import org.junit.jupiter.api.Test;
 
 class TestUtilities {
 
+	
+	// Semaan comment again because it didn't work the first time or the second time
 	imageHandler handler;
 	HorizontalManager horizontalManager = new HorizontalManager();
 	VerticalManager VerticalManager = new VerticalManager();
