@@ -13,6 +13,10 @@ import javax.swing.ImageIcon;
 
 import org.junit.jupiter.api.Test;
 
+import curveflattern.HorizontalManager;
+import curveflattern.fancySliderNumber;
+import curveflattern.imageHandler;
+
 class TestUtilities {
 
 	

@@ -10,6 +10,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import curveflattern.HorizontalManager;
+import curveflattern.fancySliderNumber;
+import curveflattern.imageHandler;
+
 /**
  * 2 Tests to assert that doing all of the steps of taking an image and lowering
  * the points in one function and doing them separately result the same.
