@@ -3,6 +3,8 @@ package curveflattern;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.awt.Point;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 
@@ -34,11 +36,12 @@ public class IntegrationTestLongVsShortMethodOfPoints {
 	 * The long method of doing the steps.
 	 * 
 	 * @param path
+	 * @throws IOException 
 	 */
 	@ParameterizedTest
 	@ValueSource(strings = {"C://Files/graph1.jpg"})
-	public void takeImageGetPointsLong(String path) {
-		ImageIcon retrievedImage = handler.retrieveImage(path);
+	public void takeImageGetPointsLong(String path) throws IOException {
+		BufferedImage retrievedImage = handler.retrieveImage(path);
 		if (handler.isJpg(path)) {
 			handler.isJpg = true;
 			points = handler.jpgToPoint(retrievedImage);

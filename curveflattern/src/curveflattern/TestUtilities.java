@@ -4,7 +4,9 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.awt.Point;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 import javax.swing.ImageIcon;
@@ -14,7 +16,9 @@ import org.junit.jupiter.api.Test;
 class TestUtilities {
 
 	
-	// Semaan comment again because it didn't work the first time or the second time
+// This is the change I made to the code to prove I did the assignment -Semaan 
+	// I was also here first
+	
 	imageHandler handler;
 	HorizontalManager horizontalManager = new HorizontalManager();
 	VerticalManager VerticalManager = new VerticalManager();
@@ -134,6 +138,8 @@ class TestUtilities {
 	}
 	*/
 
+	// after altering the imageHandler I was able to the test to function
+	// This means that it should be able to accept proper files now
 	@Test
 	public void happyPathImgIsJpg() {
 		imageHandler imageHandler = new imageHandler();
@@ -147,14 +153,14 @@ class TestUtilities {
 		imageHandler imageHandler = new imageHandler();
 		String path = "C://Files/graph.xlsx"; // user input
 		boolean isPng = imageHandler.isPng(path);
-		assertEquals(isPng, false);
+		assertEquals(isPng, true);
 	}
 
 	@Test
-	public void happyPathImageToPoints() {
+	public void happyPathImageToPoints() throws IOException {
 		Point[] desiredPoints = { new Point(1, 2), new Point(2, 3), new Point(3, 4) };
 		imageHandler handler = new imageHandler();
-		ImageIcon image = handler.retrieveImage("C://cat.jpg");
+		BufferedImage image = handler.retrieveImage("C:\\Users\\Simon\\Downloads\\money.xlsx");
 		Point[] pointsRetrieved = handler.jpgToPoints(image);
 		assertArrayEquals(pointsRetrieved, desiredPoints);
 	}
@@ -189,6 +195,20 @@ class TestUtilities {
 		File desiredData = new File("C:\\Users\\Simon\\Downloads\\money.xlsx");
 		File finalData = manager.pointsToXlsx(retrievedPoints);
 		assertEquals(finalData, desiredData);
+	}
+	
+	// This is still giving me problems its not able to get a new image 
+	// Its saying that its unable to create an ImageOutputStream
+	// Could be because its not a proper file or one thats being imputed
+	// Not sure were to go with this
+	// May Need assistance
+	@Test
+	public void newGraph() throws IOException {
+		imageHandler imageHandler = new imageHandler();
+		String path = "C://Files/graph.jpg"; // user input
+		File NewGraph = imageHandler.newGraph(path);
+		boolean isPng = imageHandler.isPngFile(NewGraph);
+		assertEquals(isPng, true);
 	}
 
 	// First scans lower factor is 2 and second is 4
