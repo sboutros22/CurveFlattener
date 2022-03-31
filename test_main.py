@@ -20,3 +20,13 @@ class Test(TestCase):
         except:
             print("No file exists")
 
+
+class TestExcelToCsv(TestCase):
+    def test_excel_to_csv(self):
+        from main import excelToCsv
+        self.assertFalse(excelToCsv() ==  [
+            [0,1, 1000],
+            [1,2,3],
+            [2,3,2],
+            [3,4,1]
+        ])
