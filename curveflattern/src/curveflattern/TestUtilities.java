@@ -211,6 +211,15 @@ class TestUtilities {
 		assertEquals(isPng, true);
 	}
 
+	@Test
+	public void displayImage() throws IOException {
+		boolean displayed = imageHandler.displayimage("C://Files/graph.jpg"); 
+		assertEquals(displayed, true);
+
+		
+	}
+	
+	
 	// First scans lower factor is 2 and second is 4
 	// For some reason this one doesn't do anything.
 	// It wont say it passes, fails, or has errors

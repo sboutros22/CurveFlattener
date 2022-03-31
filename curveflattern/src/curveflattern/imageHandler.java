@@ -1,13 +1,16 @@
 package curveflattern;
 
+import java.awt.FlowLayout;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class imageHandler {
 
@@ -129,4 +132,16 @@ public class imageHandler {
 		// TODO Auto-generated method stub
 		return true;
 	}
+
+	public static boolean displayimage(String image) throws IOException {
+		// get the file from computer needs to be changed
+		ImageIcon icon= new ImageIcon(image);
+		JFrame frame = new JFrame();
+		frame.setLayout(new FlowLayout());
+		// can alter the size of the display
+		frame.setSize(500,500);
+		frame.setVisible(true);		        	
+		return true;
+	}
+
 }
