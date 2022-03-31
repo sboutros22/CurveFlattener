@@ -35,8 +35,15 @@ public class imageHandler {
 	
 	// Creates a new graph from existing one
 	File newGraph(String path) throws IOException{
-	int width = 10;
-	int height = 10;
+	BufferedImage image = null;
+	// eventually need to get the image from any system with a direct path to it
+	//File directory = new File(System.getProperty("user.dir") + System.getProperty("file.separator")+ "image");
+	File directory = new File(path);
+	for(File file: directory.listFiles()) {
+		      image = ImageIO.read(file);	
+	}
+	int width = image.getWidth();
+	int height = image.getHeight();
 	BufferedImage bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 
 	Graphics2D ig2 = bi.createGraphics();

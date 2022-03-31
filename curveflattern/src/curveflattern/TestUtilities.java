@@ -205,7 +205,7 @@ class TestUtilities {
 	@Test
 	public void newGraph() throws IOException {
 		imageHandler imageHandler = new imageHandler();
-		String path = "C://Files/graph.jpg"; // user input
+		String path = "C://Files/graph.png"; // user input
 		File NewGraph = imageHandler.newGraph(path);
 		boolean isPng = imageHandler.isPngFile(NewGraph);
 		assertEquals(isPng, true);
@@ -213,7 +213,7 @@ class TestUtilities {
 
 	@Test
 	public void displayImage() throws IOException {
-		boolean displayed = imageHandler.displayimage("C://Files/graph.jpg"); 
+		boolean displayed = imageHandler.displayimage("C://Files/graph.png"); 
 		assertEquals(displayed, true);
 
 		
