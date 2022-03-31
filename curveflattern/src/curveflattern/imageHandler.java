@@ -135,11 +135,14 @@ public class imageHandler {
 
 	public static boolean displayimage(String image) throws IOException {
 		// get the file from computer needs to be changed
-		ImageIcon icon= new ImageIcon(image);
+		ImageIcon icon = new ImageIcon(image);
 		JFrame frame = new JFrame();
 		frame.setLayout(new FlowLayout());
 		// can alter the size of the display
 		frame.setSize(500,500);
+		JLabel label = new JLabel();
+		label.setIcon(icon);
+	    frame.add(label);
 		frame.setVisible(true);		        	
 		return true;
 	}
