@@ -13,6 +13,7 @@ def excelToCsv():
 #another way of making a csv. Could be used later to manipulate points for the math conversion
 def createCsv():
     print('john was here')
+    print('Jacob was here')
     header = ['x_coordinates, y_coordinates']
     data = [
     [1,2],
