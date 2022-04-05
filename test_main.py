@@ -14,7 +14,7 @@ class TestReadCsv(TestCase):
 
 class Test(TestCase):
     def test_create_csv(self):
-        from main import createCsv
+        #from main import createCsv
         try:
             'points.csv'.is_file()
         except:
