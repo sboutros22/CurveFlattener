@@ -8,10 +8,11 @@ import pandas as pd
 def excelToCsv():
     df = pd.read_excel("C:\\Users\\johnd\\Downloads\\points.xlsx")
     df.to_csv('points.csv', index=None, header=True)
-excelToCsv()
+
 
 #another way of making a csv. Could be used later to manipulate points for the math conversion
 def createCsv():
+    print('john was here')
     header = ['x_coordinates, y_coordinates']
     data = [
     [1,2],
