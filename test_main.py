@@ -18,6 +18,7 @@ class Test(TestCase):
         try:
             'points.csv'.is_file()
         except:
+            print("Jacob was here")
             print("No file exists")
 
 
