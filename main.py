@@ -21,11 +21,15 @@ def createCsv():
     [7,60],
     [8,4]
     ]
+    df=pd.DataFrame(data)
     with open('points.csv', 'w', encoding= 'UTF8', newline = '') as f:
         writer = csv.writer(f)
         writer.writerow(header)
         writer.writerows(data)
-createCsv()
+    return data
+data = createCsv()
+df = pd.DataFrame(data)
+#createCsv()
 
 #Displaying the current csv
 def readCsv():
@@ -41,3 +45,12 @@ def displayCsv():
     plt.savefig('testplot.png')
     plt.show()
 displayCsv()
+
+#Exports the data to a .xls file
+def exportXls():
+    df.to_excel(r'C:\Users\jacx2\Documents\python\export_dataframe.xlsx', index=False, header=True)
+exportXls()
+
+def exportCsv():
+    df.to_csv(r'C:\Users\jacx2\Documents\python\points.csv', index=None, header=True)
+exportCsv()
