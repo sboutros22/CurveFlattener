@@ -19,6 +19,7 @@ class Test(TestCase):
             'points.csv'.is_file()
         except:
             print("No file exists")
+            print("Matt was here")
 
 
 class TestExcelToCsv(TestCase):

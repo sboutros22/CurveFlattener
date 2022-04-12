@@ -4,10 +4,6 @@ import java.awt.Point;
 
 import org.junit.jupiter.api.Test;
 
-import curveflattern.HorizontalManager;
-import curveflattern.fancySliderNumber;
-import curveflattern.imageHandler;
-
 public class IntegrationTestWHoleMethod {
 
 	imageHandler handler;

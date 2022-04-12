@@ -1,5 +1,5 @@
 package curveflattern;
-//taylor was here
+
 import java.io.File;
 
 public class Utilities {

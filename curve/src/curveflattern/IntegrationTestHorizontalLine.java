@@ -8,10 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import curveflattern.HorizontalManager;
-import curveflattern.fancySliderNumber;
-import curveflattern.imageHandler;
-
 public class IntegrationTestHorizontalLine {
 	
 	imageHandler handler = new imageHandler();

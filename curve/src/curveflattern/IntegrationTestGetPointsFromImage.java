@@ -1,5 +1,5 @@
 package curveflattern;
-// john was here
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.awt.Point;
@@ -7,10 +7,6 @@ import java.awt.Point;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import curveflattern.HorizontalManager;
-import curveflattern.fancySliderNumber;
-import curveflattern.imageHandler;
 
 public class IntegrationTestGetPointsFromImage {
 
