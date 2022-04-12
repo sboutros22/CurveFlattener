@@ -1,14 +1,16 @@
 import csv
 
 import matplotlib.pyplot as plt
+import openpyxl as openpyxl
 from matplotlib import style
 import pandas as pd
+
 
 #takes excel file and converts it to csv
 def excelToCsv():
     df = pd.read_excel("C:\\Users\\johnd\\Downloads\\points.xlsx")
     df.to_csv('points.csv', index=None, header=True)
-
+excelToCsv()
 
 #another way of making a csv. Could be used later to manipulate points for the math conversion
 def createCsv():
@@ -23,7 +25,7 @@ def createCsv():
         writer = csv.writer(f)
         writer.writerow(header)
         writer.writerows(data)
-createCsv()
+#createCsv()
 
 #Displaying the current csv
 def readCsv():
