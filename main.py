@@ -6,9 +6,10 @@ import pandas as pd
 
 #takes excel file and converts it to csv
 def excelToCsv():
-    df = pd.read_excel("C:\\Users\\johnd\\Downloads\\points.xlsx")
+    #imported sample data, issue: can't read column names
+    df = pd.read_excel("C:\\Users\\jacx2\\Documents\\python\\points.xlsx")
     df.to_csv('points.csv', index=None, header=True)
-
+excelToCsv()
 
 #another way of making a csv. Could be used later to manipulate points for the math conversion
 def createCsv():
@@ -27,8 +28,8 @@ def createCsv():
         writer.writerow(header)
         writer.writerows(data)
     return data
-data = createCsv()
-df = pd.DataFrame(data)
+#data = createCsv()
+# df = pd.DataFrame(data)
 #createCsv()
 
 #Displaying the current csv
