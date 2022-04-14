@@ -12,6 +12,20 @@ def excelToCsv():
     df.to_csv('points.csv', index=None, header=True)
 excelToCsv()
 
+def animate(i):
+    data = [
+        [1, 2],
+        [2, 8],
+        [7, 60],
+        [8, 4]
+    ]
+    fig, ax = plt.subplots()
+    with open('data.txt','r') as f:
+        for line in f:
+            data.append(int(line.strip()))
+    ax.clear()
+    ax.plot(data[-5:])
+
 #another way of making a csv. Could be used later to manipulate points for the math conversion
 def createCsv():
     header = ['x_coordinates, y_coordinates']
