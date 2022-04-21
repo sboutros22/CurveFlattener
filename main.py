@@ -10,18 +10,18 @@ def excelToCsv():
     df = pd.read_excel("C:\\Users\\johnd\\Downloads\\points.xlsx")
     df.to_csv('points.csv', index=None, header=True)
 
-
-# another way of making a csv. Could be used later to manipulate points for the math conversion
-def createCsv():
-    print('john was here')
-    print('Jacob was here')
-    header = ['x_coordinates, y_coordinates']
-    data = [
+data = [
         [1, 2],
         [2, 8],
         [7, 20],
         [8, 4]
     ]
+# another way of making a csv. Could be used later to manipulate points for the math conversion
+def createCsv(data):
+    print('john was here')
+    print('Jacob was here')
+    header = ['x_coordinates, y_coordinates']
+
     df = pd.DataFrame(data)
     with open('points.csv', 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f)
@@ -30,7 +30,7 @@ def createCsv():
     return data
 
 
-data = createCsv()
+data = createCsv(data)
 df = pd.DataFrame(data)
 
 
@@ -95,12 +95,16 @@ def flattener(data, lowerFactor): #Contos
     for idx, x in enumerate(data):
 
         if data[idx][1] > avg:
-            data[idx][1] = int(data[idx][1] / lowerFactor) #takes an array of only single ints for highvals, not array of points
+            data[idx][1] = int(data[idx][1] / lowerFactor)
         else:
             data[idx][1] = int(data[idx][1] / 1.5)
     return data
 
-print("lowered data", flattener(data,3))
+
+data = createCsv(flattener(data,4))
+df = pd.DataFrame(data)
+displayCsv()
+print("lowered data", data)
 
 
 
