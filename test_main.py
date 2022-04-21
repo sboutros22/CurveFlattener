@@ -8,13 +8,13 @@ class TestReadCsv(TestCase):
         self.assertFalse(readCsv() == [
             [1, 2],
             [2, 8],
-            [7, 60]
+            [7, 5]
         ])
 
 
 class Test(TestCase):
     def test_create_csv(self):
-        from main import createCsv
+        # from main import createCsv
         try:
             'points.csv'.is_file()
         except:
@@ -25,9 +25,9 @@ class Test(TestCase):
 class TestExcelToCsv(TestCase):
     def test_excel_to_csv(self):
         from main import excelToCsv
-        self.assertFalse(excelToCsv() ==  [
-            [0,1, 1000],
-            [1,2,3],
-            [2,3,2],
-            [3,4,1]
+        self.assertFalse(excelToCsv() == [
+            [0, 1, 1000],
+            [1, 2, 3],
+            [2, 3, 2],
+            [3, 4, 1]
         ])
