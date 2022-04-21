@@ -3,18 +3,12 @@ import csv
 import matplotlib.pyplot as plt
 from matplotlib import style
 import pandas as pd
-
-
-with open('C:\Users\mstup\OneDrive\Documents\\test.txt') as f:
-    contents = f.read()
-    print(contents)
+import numpy as np
 
 
 
-#takes excel file and converts it to csv
-def excelToCsv():
-    df = pd.read_excel("C:\\Users\\johnd\\Downloads\\points.xlsx")
-    df.to_csv('points.csv', index=None, header=True)
+
+
 
 
 excelToCsv()
@@ -56,3 +50,23 @@ def displayCsv():
 
 
 displayCsv()
+
+def loopToZero():
+    a = np.array([[3,7,6,5,3]])
+    b = 0
+    c = 0
+    for x in a:
+            b = b+a
+    print(b)
+
+    while c != 0:
+
+        for x in a:
+            if a[x] > 0:
+                a[x] = a[x] -1
+            else:
+                a[x] = 0
+        for x in a:
+            c = c + a[x]
+
+
