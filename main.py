@@ -18,10 +18,7 @@ data = [
     ]
 # another way of making a csv. Could be used later to manipulate points for the math conversion
 def createCsv(data):
-    print('john was here')
-    print('Jacob was here')
     header = ['x_coordinates, y_coordinates']
-
     df = pd.DataFrame(data)
     with open('points.csv', 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f)
@@ -51,6 +48,8 @@ def displayCsv():
     df = pd.read_csv('points.csv')
     df.plot()
     plt.savefig('testplot.png')
+    plt.autoscale(False)
+    plt.ylim(-1, 20)
     plt.show()
 
 
@@ -71,10 +70,10 @@ def exportCsv():
 
 exportCsv()
 
-data = [
+newData = [
     [1, 2],
     [2, 8],
-    [7, 20],
+    [7, 12],
     [8, 4]
 ]
 
@@ -83,7 +82,7 @@ def getAverage(nums): #Contos
     sum = 0
     for ind, x in enumerate(data):
         sum += data[ind][1]
-    return sum / len(nums) - 2
+    return sum / len(nums)
 print("avg: ", getAverage(data))
 
 
@@ -97,15 +96,36 @@ def flattener(data, lowerFactor): #Contos
         if data[idx][1] > avg:
             data[idx][1] = int(data[idx][1] / lowerFactor)
         else:
-            data[idx][1] = int(data[idx][1] / 1.5)
+            data[idx][1] = int(data[idx][1] / (lowerFactor / 2))
     return data
 
+# displayCsv()
+# data = createCsv(flattener(data,4))
+# df = pd.DataFrame(data)
+# displayCsv()
+# print("lowered data", data)
 
-data = createCsv(flattener(data,4))
+def lowerSlopeAgain(data, lowerFactor):
+    if (lowerFactor == 0):
+        print("You're a dumbass")
+        return
+    avg = getAverage(data)
+    print("average; ", avg)
+    for idx, x in enumerate(data):
+        distance = (avg - data[idx][1]) / lowerFactor
+        data[idx][1] = data[idx][1] + ((avg - data[idx][1]) - distance)
+        # if (data[idx][1] >= avg):
+        #     data[idx][1] = data[idx][1] + (abs(data[idx][1] - avg))
+        # else:
+        #     data[idx][1] = data[idx][1] - (abs(data[idx][1] - avg))
+    return data
+
+#Test
+data = createCsv(lowerSlopeAgain(newData, 4))
 df = pd.DataFrame(data)
 displayCsv()
-print("lowered data", data)
-
+df = pd.DataFrame(newData)
+print("lowered data", newData)
 
 
 
