@@ -7,9 +7,11 @@ import pandas as pd
 
 # takes excel file and converts it to csv
 def excelToCsv():
-    df = pd.read_excel("C:\\Users\\johnd\\Downloads\\points.xlsx")
+    df = pd.read_excel("C:\\Users\\Simon\\Downloads\\CurveFlattener-John\\CurveFlattener-John\\points.xlsx")
     df.to_csv('points.csv', index=None, header=True)
     print("excel data", df)
+
+
 excelToCsv()
 
 
@@ -26,18 +28,20 @@ def createCsv(data):
 
 # data = createCsv(data)
 data = [
-        [1, 2],
-        [2, 20],
-        [7, 20],
-        [8, 4]
-    ]
+    [1, 2],
+    [2, 10],
+    [7, 10],
+    [8, 4]
+]
 df = pd.DataFrame(data)
 data2 = [
-        [1, 2],
-        [2, 20],
-        [7, 20],
-        [8, 4]
-    ]
+    [1, 2],
+    [2, 10],
+    [7, 10],
+    [8, 4]
+]
+
+
 # df = pd.DataFrame(data2)
 
 # createCsv()
@@ -52,12 +56,24 @@ def readCsv():
 
 
 # Displays the csv file in graph format. Also saves the graph as a .jpg
-def displayCsv(before):
+def displayCsvBefore(before):
     style.use('ggplot')
     # df = pd.read_csv('points.csv')
     plt.plot(before)
     # plt.plot(after)
-    plt.savefig('testplot.png')
+    # plt.savefig('testplot.png')
+    plt.autoscale(False)
+    plt.ylim(-1, 20)
+    plt.show()
+
+
+def displayCsvAfter(after):
+    style.use('ggplot')
+    # df = pd.read_csv('points.csv')
+    after = lowerSlopeAgain(df, 2)
+    plt.plot(after)
+    # plt.plot(after)
+    # plt.savefig('testplot.png')
     plt.autoscale(False)
     plt.ylim(-1, 20)
     plt.show()
@@ -81,13 +97,14 @@ def displayCsv(before):
 # exportCsv()
 
 
-def getAverage(nums): #Contos
+def getAverage(nums):  # Contos
     sum = 0
-    for ind, x in enumerate(data):
-        sum += data[ind][1]
+    for ind, x in enumerate(nums):
+        sum += nums[ind][1]
     return sum / len(nums)
-print("avg: ", getAverage(data))
 
+
+print("avg: ", getAverage(data))
 
 
 # displayCsv()
@@ -113,11 +130,12 @@ def lowerSlopeAgain(loweredData, lowerFactor):
         print("for test", loweredData)
     return loweredData
 
-#Test
+
+# Test
 newData = lowerSlopeAgain(data2, 4)
 df1 = pd.DataFrame(data)
 df2 = pd.DataFrame(newData)
 print("Old data", data)
 print("lowered data", newData)
-print("lowered data", df2)
-displayCsv(df2)
+displayCsvBefore(df2)
+displayCsvAfter(df1)
