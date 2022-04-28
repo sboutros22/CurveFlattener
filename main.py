@@ -1,5 +1,9 @@
 import csv
 
+import openpyxl as openpyxl
+import pip
+from pip._internal.operations import install
+
 import matplotlib.pyplot as plt
 from matplotlib import style
 import pandas as pd
@@ -7,7 +11,7 @@ import pandas as pd
 
 # takes excel file and converts it to csv
 def excelToCsv():
-    df = pd.read_excel("C:\\Users\\johnd\\Downloads\\points.xlsx")
+    df = pd.read_excel("C:\\Users\\eriky\\Downloads\\points.xlsx")
     df.to_csv('points.csv', index=None, header=True)
     print("excel data", df)
 excelToCsv()
