@@ -1,9 +1,10 @@
 import csv
 
 import matplotlib.pyplot as plt
+import openpyxl as openpyxl
 from matplotlib import style
 import pandas as pd
-
+#install openpyxl
 
 # takes excel file and converts it to csv
 def excelToCsv():
@@ -48,8 +49,8 @@ data2 = [
 
 # Displaying the current csv
 def readCsv():
-    df = pd.read_csv('points.csv')
-    print(df)
+    df123 = pd.read_csv('points.csv')
+    print(df123)
 
 
 # readCsv()
@@ -62,7 +63,7 @@ def displayCsvBefore(before):
     plt.plot(before)
     # plt.plot(after)
     # plt.savefig('testplot.png')
-    plt.autoscale(False)
+    plt.autoscale(True)
     plt.ylim(-1, 20)
     plt.show()
 
@@ -74,7 +75,7 @@ def displayCsvAfter(after):
     plt.plot(after)
     # plt.plot(after)
     # plt.savefig('testplot.png')
-    plt.autoscale(False)
+    plt.autoscale(True)
     plt.ylim(-1, 20)
     plt.show()
 
