@@ -67,19 +67,6 @@ def displayCsvBefore(before):
     plt.ylim(-1, 20)
     plt.show()
 
-
-def displayCsvAfter(after):
-    style.use('ggplot')
-    # df = pd.read_csv('points.csv')
-    after = lowerSlopeAgain(df, 2)
-    plt.plot(after)
-    # plt.plot(after)
-    # plt.savefig('testplot.png')
-    plt.autoscale(True)
-    plt.ylim(-1, 20)
-    plt.show()
-
-
 # displayCsv()
 
 
@@ -134,9 +121,7 @@ def lowerSlopeAgain(loweredData, lowerFactor):
 
 # Test
 newData = lowerSlopeAgain(data2, 4)
-df1 = pd.DataFrame(data)
 df2 = pd.DataFrame(newData)
 print("Old data", data)
 print("lowered data", newData)
 displayCsvBefore(df2)
-displayCsvAfter(df1)
